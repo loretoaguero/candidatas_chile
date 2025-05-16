@@ -1,0 +1,5 @@
+mujeres_env/
+.env
+info_adicional/
+__pycache__/
+.DS_Store
