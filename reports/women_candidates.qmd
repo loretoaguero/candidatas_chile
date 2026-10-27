@@ -1,0 +1,110 @@
+---
+title: "Women in municipale elections in Chile"
+subtitle: "Political representation · Municipality elections"
+author: "Data4Women"
+lang: en
+
+format:
+  html:
+    theme: none
+    css: styles.css
+    toc: false
+    page-layout: full
+    title-block-banner: false
+    embed-resources: false
+
+execute:
+  echo: false
+  warning: false
+  message: false
+
+jupyter: mujeres_en_elecciones
+---
+
+::: {.story-hero}
+::: {.story-container}
+
+<p class="eyebrow">DATA4WOMEN / DATA VIZ</p>
+
+# *Women* in municipal elections in Chile
+
+<p class="hero-lead">
+Una exploración de la representación política de las mujeres
+en las elecciones municipales de Chile.
+</p>
+
+<p class="hero-meta">
+Investigación y visualización · Data4Women
+</p>
+
+:::
+:::
+
+::: {.story-container}
+::: {.story-section .intro}
+<p class="section-index">01 / EL CONTEXTO</p>
+
+## Los números necesitan contexto
+
+Aquí puedes presentar la pregunta de investigación, el territorio y el período estudiado. Explica qué representan los datos y por qué es importante analizarlos desde una perspectiva de género.
+:::
+
+::: {.story-section .chart-section}
+
+<p class="section-index">02 / EXPLORAR LOS DATOS</p>
+
+## Representación de las mujeres en elecciones municipales
+
+<p class="chart-deck">
+Explora la evolución de la participación de mujeres
+en las elecciones municipales chilenas.
+</p>
+
+::: {.chart-frame}
+
+```{python}
+#| echo: false
+
+%run ./scripts/grafico.py
+```
+
+<div class="chart-caption">
+  <span>Fuente: SERVEL · Elaboración Data4Women</span>
+</div>
+
+:::
+
+<p class="method-note">
+**Cómo leer el gráfico.**
+Las cifras representan los resultados obtenidos a partir
+de los datos electorales.
+</p>
+
+:::
+
+::: {.story-section .finding}
+<p class="section-index">03 / QUÉ OBSERVAMOS</p>
+
+## El hallazgo principal
+
+Escribe aquí una interpretación que esté respaldada por los datos. Diferencia los resultados observados de las posibles explicaciones; evita presentar correlaciones como causas.
+:::
+
+::: {.story-section}
+<p class="section-index">04 / METODOLOGÍA</p>
+
+## Sobre los datos
+
+Describe la fuente original, fecha de actualización, criterios de limpieza, categorías y limitaciones del análisis. Agrega enlaces a datos y código reproducible cuando estén disponibles.
+
+**Datos:** [Enlace a la fuente](https://example.org) · **Código:** [Repositorio](https://github.com/data4women-org)
+:::
+:::
+
+::: {.story-footer}
+::: {.story-container}
+<p>DATA4WOMEN · Datos para comprender, visibilizar y transformar.</p>
+<a href="https://data4women-org.github.io/">Volver a Data4Women ↗</a>
+:::
+:::
+

@@ -1,0 +1,32 @@
+[project]
+name = "mujeres-en-elecciones"
+version = "0.1.0"
+description = "Add your description here"
+requires-python = ">=3.14"
+dependencies = [
+    "fastexcel>=0.21.0",
+    "ipykernel>=7.4.0",
+    "jupyter>=1.1.1",
+    "matplotlib>=3.11.2",
+    "numpy>=2.5.3",
+    "openpyxl>=3.1.5",
+    "pandas>=3.0.6",
+    "plotly>=7.1.0",
+    "polars>=2.0.0",
+    "pyyaml>=6.0.3",
+    "seaborn>=0.13.2",
+    "streamlit>=1.65.0",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.17.3",
+    "vulture>=2.16",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]

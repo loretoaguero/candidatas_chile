@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --ink: #101d42;
+    --teal: #15aea9;
+    --cream: #f4f1de;
+    --violet: #9569ca;
+    --violet-dark: #352b64;
+    --lilac: #cab4e4;
+    --surface: #fffefa;
+    --graphic: #d8f3f2;
+}
+
+* {
+    box-sizing: border-box
+}
+
+html {
+    scroll-behavior: smooth
+}
+
+body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: Inter, Arial, sans-serif;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased
+}
+
+a {
+    color: var(--teal);
+    text-underline-offset: .2em
+}
+
+a:hover {
+    color: var(--violet-dark)
+}
+
+a:focus-visible {
+    outline: 3px solid var(--violet);
+    outline-offset: 4px
+}
+
+::selection {
+    background: var(--lilac);
+    color: var(--ink)
+}
+
+/* Quarto: neutralizar los anchos de página predeterminados */
+#quarto-content,
+main.content,
+#quarto-document-content {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0
+}
+
+#title-block-header {
+    display: none
+}
+
+.story-container {
+    width: min(100% - 3rem, 900px);
+    margin-inline: auto
+}
+
+.story-hero {
+    padding: clamp(1.5rem, 3vw, 2.5rem) 0;
+    color: var(--cream);
+    background: var(--violet-dark);
+}
+
+.eyebrow,
+.section-index {
+    margin: 0 0 1.5rem;
+    font-size: .73rem;
+    font-weight: 800;
+    letter-spacing: .15em;
+    text-transform: uppercase
+}
+
+.eyebrow {
+    color: var(--lilac)
+}
+
+.story-hero h1 {
+    max-width: 850px;
+    margin: 0;
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    line-height: 1.15;
+    letter-spacing: -.035em;
+    font-weight: 800;
+}
+
+.story-hero h1 em {
+    font-family: Georgia, serif;
+    color: var(--teal);
+    font-weight: 400;
+    font-size: 1.4em;
+}
+
+.hero-lead {
+    max-width: 680px;
+    margin: 0.8rem 0;
+    font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+    line-height: 1.45;
+}
+
+.hero-meta {
+    font-size: .8rem;
+    color: var(--lilac)
+}
+
+.story-section {
+    padding: clamp(1.8rem, 4vw, 3rem) 0;
+    border-bottom: 1px solid rgba(16, 29, 66, .16);
+}
+
+.section-index {
+    color: var(--teal)
+}
+
+.story-section h2 {
+    max-width: 750px;
+    margin: 0 0 1.3rem;
+    font-size: clamp(1.3rem, 3.5vw, 1.6rem);
+    font-weight: 800;
+    letter-spacing: -.045em;
+    line-height: 1.15
+}
+
+.story-section>p:not(.section-index):not(.chart-deck):not(.method-note) {
+    max-width: 740px;
+    font-size: 1.08rem
+}
+
+.chart-deck {
+    max-width: 720px;
+    font-size: 1.08rem;
+    color: #45516a
+}
+
+.chart-frame {
+    margin: 2.2rem 0 1rem;
+    background: var(--surface);
+    border-top: 5px solid var(--teal);
+    box-shadow: 0 12px 38px rgba(16, 29, 66, .08)
+}
+
+.embed-wrap {
+    position: relative;
+    width: 100%;
+    height: clamp(430px, 65vw, 640px)
+}
+
+.embed-wrap iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0
+}
+
+.chart-caption {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0.5rem 0.7rem;
+    border-top: 1px solid c;
+    font-size: .77rem;
+    color: #556078;
+    background:var(--graphic);
+}   
+
+.method-note {
+    margin-top: 1rem;
+    font-size: .87rem;
+    color: #556078
+}
+
+.finding {
+    margin: 2rem 0;
+    padding: clamp(2rem, 5vw, 3rem);
+    background: #eee7f5;
+    border-bottom: 0;
+    border-left: 6px solid var(--violet-dark)
+}
+
+.finding .section-index {
+    color: var(--violet-dark)
+}
+
+.story-footer {
+    padding: 2.5rem 0;
+    color: var(--cream);
+    background: var(--ink)
+}
+
+.story-footer .story-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap
+}
+
+.story-footer p {
+    margin: 0
+}
+
+.story-footer a {
+    color: var(--lilac)
+}
+
+@media(max-width:600px) {
+    .story-container {
+        width: min(100% - 2rem, 900px)
+    }
+
+    .story-hero {
+        padding: 1.5rem 0
+    }
+
+    .embed-wrap {
+        height: 520px
+    }
+
+    .chart-caption {
+        padding: .8rem 1rem
+    }
+
+    .finding {
+        margin-inline: -.2rem
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
+    html {
+        scroll-behavior: auto
+    }
+}
