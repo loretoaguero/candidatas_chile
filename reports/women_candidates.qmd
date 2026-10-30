@@ -1,7 +1,7 @@
 ---
-title: "Women in municipale elections in Chile"
-subtitle: "Political representation · Municipality elections"
-author: "Data4Women"
+title: "Chili : la participation des femmes aux élections"
+subtitle: "Political representation · Elections"
+author: "Loreto Agüero-Gaete · Data4Women"
 lang: en
 
 format:
@@ -22,89 +22,142 @@ jupyter: mujeres_en_elecciones
 ---
 
 ::: {.story-hero}
+
 ::: {.story-container}
 
 <p class="eyebrow">DATA4WOMEN / DATA VIZ</p>
 
-# *Women* in municipal elections in Chile
+# L'évolution de la place des femmes dans la vie politique chilienne
 
 <p class="hero-lead">
-Una exploración de la representación política de las mujeres
-en las elecciones municipales de Chile.
+Des premières conquêtes du droit de vote aux quotas de candidature, retour sur les étapes qui ont façonné la participation des femmes aux élections chiliennes.
 </p>
 
 <p class="hero-meta">
-Investigación y visualización · Data4Women
+Research and data visualization · Data4Women
 </p>
 
 :::
+
 :::
 
 ::: {.story-container}
 ::: {.story-section .intro}
-<p class="section-index">01 / EL CONTEXTO</p>
+<p class="section-index">01 / CONTEXTE</p>
 
-## Los números necesitan contexto
+## Pourquoi cette enquête ?
 
-Aquí puedes presentar la pregunta de investigación, el territorio y el período estudiado. Explica qué representan los datos y por qué es importante analizarlos desde una perspectiva de género.
+Depuis le retour à la démocratie, comment la représentation des femmes dans la vie politique chilienne a-t-elle évolué ? Le soutien des électrices et des électeurs aux candidates se reflète-t-il dans les résultats électoraux ?
+
+## Des droits de vote aux quotas : les étapes clés
+
+::: {.chart-deck}
+
+En **1934**, les Chiliennes obtiennent le droit de vote aux élections municipales ainsi que la possibilité de se porter candidates. À titre de comparaison, en France, les femmes obtiennent ce droit en **1944**.
+
+En **1949**, ces droits sont étendus aux élections présidentielles et parlementaires au Chili. Cependant, les femmes restent largement sous-représentées dans les fonctions politiques.
+
+En **2015**, le Chili instaure un quota de genre pour les élections parlementaires : les candidatures d'un même sexe ne peuvent représenter plus de 60 % du total des candidatures présentées par chaque parti.
+
+:::
+:::
 :::
 
+::: {.story-container}
 ::: {.story-section .chart-section}
-
-<p class="section-index">02 / EXPLORAR LOS DATOS</p>
-
-## Representación de las mujeres en elecciones municipales
-
-<p class="chart-deck">
-Explora la evolución de la participación de mujeres
-en las elecciones municipales chilenas.
-</p>
-
+<p class="section-index">02 / EXPLORER LES DONNÉES</p>
 ::: {.chart-frame}
+<h3 class="chart-title">
+  Women's Participation in Chilean Elections
+</h3>
 
 ```{python}
 #| echo: false
+#| warning: false
+#| message: false
 
-%run ./scripts/grafico.py
+from pathlib import Path
+from IPython.display import HTML, display
+import runpy
+import vl_convert as vlc
+
+# Run chart.py
+variables = runpy.run_path(str(Path("../scripts/chart.py").resolve()))
+
+# Retrieve the chart
+chart = variables["chart"]
+
+# Generate the interactive chart
+html = vlc.vegalite_to_html(
+    chart.to_json(),
+    bundle=True,
+)
+
+display(HTML(html))
 ```
 
 <div class="chart-caption">
-  <span>Fuente: SERVEL · Elaboración Data4Women</span>
+  <span>Source: SERVEL · Analysis by Data4Women</span>
 </div>
-
 :::
 
-<p class="method-note">
-**Cómo leer el gráfico.**
-Las cifras representan los resultados obtenidos a partir
-de los datos electorales.
-</p>
-
+<div class="method-note">
+<strong>Comment lire le graphique.</strong>
+Les barres représentent la proportion de femmes et d’hommes parmi les candidatures à chaque élection, leur somme étant toujours égale à 100 %.
+La courbe indique la proportion de femmes parmi l’ensemble des personnes élues à chaque scrutin.
+</div>
+:::
 :::
 
+::: {.story-container}
 ::: {.story-section .finding}
-<p class="section-index">03 / QUÉ OBSERVAMOS</p>
+<p class="section-index">03 / SE PRÉSENTER EST DÉJÀ UN DÉFI. ÊTRE ÉLUE L’EST ENCORE PLUS. </p>
 
-## El hallazgo principal
+## Principaux constats
 
-Escribe aquí una interpretación que esté respaldada por los datos. Diferencia los resultados observados de las posibles explicaciones; evita presentar correlaciones como causas.
+La sous-représentation des femmes en politique n’a rien de nouveau, et le Chili ne fait pas exception. Malgré une progression des candidatures féminines au fil des années, le pays reste encore loin de la parité.
+
+Les élections municipales illustrent bien ce décalage. En 2024, les femmes représentaient près de 40 % des candidatures aux conseils municipaux, mais n’ont remporté que 33,5 % des sièges. Autrement dit, quatre candidats sur dix étaient des femmes, mais seulement une personne élue sur trois.
+
+L’écart se creuse davantage pour les mairies, où un seul poste est à pourvoir par commune. Lors du même scrutin, 24,8 % des candidatures étaient féminines, contre seulement 16,5 % des personnes élues.
+
+Cette tendance rappelle celle observée dans le monde de l’entreprise : plus les responsabilités sont importantes, moins les femmes sont présentes aux postes de direction. Un parallèle qui soulève la question des obstacles à l’accès au pouvoir.
+
+Au niveau parlementaire, une loi adoptée en 2015 a instauré un quota limitant à 60 % la part des candidatures d’un même sexe par parti. Cette mesure a favorisé une représentation plus équilibrée parmi les candidats, sans pour autant garantir la parité parmi les élus.
+
+Les élections sénatoriales de 2025 marquent toutefois une avancée : sur les 23 sièges renouvelés, dix ont été remportés par des femmes, soit 43,5 %. Un résultat inédit qui contraste avec les inégalités persistantes dans les autres fonctions politiques.
+:::
 :::
 
+::: {.story-container}
 ::: {.story-section}
-<p class="section-index">04 / METODOLOGÍA</p>
+<p class="section-index">04 / DONNÉES</p>
 
-## Sobre los datos
+## Source des données
 
-Describe la fuente original, fecha de actualización, criterios de limpieza, categorías y limitaciones del análisis. Agrega enlaces a datos y código reproducible cuando estén disponibles.
+Les données proviennent du Service électoral du Chili (SERVEL). Elles ont été téléchargées au format CSV, puis explorées, nettoyées et utilisées pour créer les graphiques.
 
-**Datos:** [Enlace a la fuente](https://example.org) · **Código:** [Repositorio](https://github.com/data4women-org)
+**Data:** [Source link](https://app.powerbi.com/view?r=eyJrIjoiMTExOTgwZjItZDU4OS00NTdiLThmODgtMGVhY2E2MDk3MzI4IiwidCI6IjI0ODMxZWJlLWQyNmQtNGQzMC05ZmE4LWVmM2MwMjQzYjMyZSIsImMiOjR9) · **Code:** [Repository](https://github.com/data4women-org)
+
 :::
 :::
 
 ::: {.story-footer}
 ::: {.story-container}
-<p>DATA4WOMEN · Datos para comprender, visibilizar y transformar.</p>
-<a href="https://data4women-org.github.io/">Volver a Data4Women ↗</a>
+<p>DATA4WOMEN · Data to understand, make visible, and transform.</p>
+
+<a href="https://data4women-org.github.io/">Back to Data4Women ↗</a>
+
 :::
 :::
 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".vega-embed").forEach(embed => {
+    const bindings = embed.querySelector(".vega-bindings");
+    if (bindings) {
+      embed.prepend(bindings);
+    }
+  });
+});
+</script>
