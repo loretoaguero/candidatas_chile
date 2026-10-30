@@ -1,0 +1,343 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;500;600;700&display=swap");
+
+/* ========================================
+   1. DESIGN TOKENS
+   ======================================== */
+
+:root {
+    --ink: #101d42;
+    --teal: #15aea9;
+    --cream: #f4f1de;
+    --violet: #9569ca;
+    --violet-dark: #352b64;
+    --lilac: #cab4e4;
+    --surface: #fffefa;
+    --graphic: #d8f3f2;
+    --muted: #556078;
+
+    --font-body: "Inter", Arial, sans-serif;
+    --font-chart: "Nunito", sans-serif;
+}
+
+/* ========================================
+   2. GLOBAL STYLES
+   ======================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: var(--font-body);
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: var(--teal);
+    text-underline-offset: 0.2em;
+}
+
+a:hover {
+    color: var(--violet-dark);
+}
+
+a:focus-visible {
+    outline: 3px solid var(--violet);
+    outline-offset: 4px;
+}
+
+::selection {
+    background: var(--lilac);
+    color: var(--ink);
+}
+
+/* ========================================
+   3. QUARTO LAYOUT
+   ======================================== */
+
+#quarto-content,
+main.content,
+#quarto-document-content {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+}
+
+#title-block-header {
+    display: none;
+}
+
+.story-container {
+    width: min(100% - 3rem, 900px);
+    margin-inline: auto;
+}
+
+/* ========================================
+   4. HERO
+   ======================================== */
+
+.story-hero {
+    padding: clamp(1.5rem, 3vw, 2.5rem) 0;
+    color: var(--cream);
+    background: var(--violet-dark);
+}
+
+.eyebrow,
+.section-index {
+    margin: 0 0 1.5rem;
+    font-size: 0.73rem;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.eyebrow {
+    color: var(--lilac);
+}
+
+.story-hero h1 {
+    max-width: 850px;
+    margin: 0;
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    line-height: 1.15;
+    letter-spacing: -0.035em;
+    font-weight: 800;
+}
+
+.story-hero h1 em {
+    font-family: Georgia, serif;
+    color: var(--teal);
+    font-size: 1.4em;
+    font-weight: 400;
+}
+
+.hero-lead {
+    max-width: 680px;
+    margin: 0.8rem 0;
+    font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+    line-height: 1.45;
+}
+
+.hero-meta {
+    font-size: 0.8rem;
+    color: var(--lilac);
+}
+
+/* ========================================
+   5. STORY SECTIONS
+   ======================================== */
+
+.story-section {
+    padding: clamp(1.8rem, 4vw, 3rem) 0;
+    border-bottom: 1px solid rgba(16, 29, 66, 0.16);
+}
+
+.section-index {
+    color: var(--teal);
+}
+
+.story-section h2 {
+    max-width: 750px;
+    margin: 0 0 1.3rem;
+    font-size: clamp(1.3rem, 3.5vw, 1.6rem);
+    font-weight: 800;
+    letter-spacing: -0.045em;
+    line-height: 1.15;
+}
+
+.story-section > p:not(.section-index):not(.chart-deck):not(.method-note) {
+    max-width: 740px;
+    font-size: 1.08rem;
+}
+
+.chart-deck {
+    max-width: 720px;
+    font-size: 1.08rem;
+    color: #45516a;
+}
+
+/* ========================================
+   6. CHART CONTAINER
+   ======================================== */
+
+.chart-frame {
+    margin: 2.2rem 0 1rem;
+    background: var(--graphic);
+    border-top: 5px solid var(--teal);
+    box-shadow: 0 12px 38px rgba(16, 29, 66, 0.08);
+}
+
+.chart-frame .cell,
+.chart-frame .cell-output,
+.chart-frame .cell-output-display,
+.chart-frame .vega-embed {
+    background: var(--graphic);
+}
+
+.chart-frame .vega-embed {
+    width: 100%;
+    max-width: 100%;
+    font-family: var(--font-chart);
+}
+
+.chart-frame .vega-embed > div {
+    max-width: 100%;
+}
+
+.chart-title {
+    margin: 0;
+    padding: 24px 40px 8px;
+    background: var(--graphic);
+    color: var(--violet-dark);
+    font-family: "Fredoka", sans-serif;
+    font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+    font-weight: 400;
+}
+
+/* ========================================
+   7. ELECTION SELECTOR
+   ======================================== */
+
+.chart-frame .vega-bindings {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 0;
+    padding: 0 40px 20px;
+    background: var(--graphic);
+    color: var(--violet-dark);
+    font-family: var(--font-chart);
+}
+
+.chart-frame .vega-bindings select {
+    padding: 8px 14px;
+    border: 1px solid var(--lilac);
+    border-radius: 8px;
+    background: var(--surface);
+    color: var(--violet-dark);
+    font-family: var(--font-chart);
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.chart-frame .vega-bindings select:focus-visible {
+    outline: 2px solid var(--violet);
+    outline-offset: 2px;
+}
+
+/* ========================================
+   8. CHART CAPTION & METHODOLOGY
+   ======================================== */
+.chart-caption {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    padding: 20px 16px;
+
+    border-top: 5px solid var(--teal);
+
+    background: var(--graphic);
+    color: var(--muted);
+    font-size: 0.77rem;
+}
+
+.method-note {
+    margin-top: 1rem;
+    color: var(--muted);
+    font-size: 0.87rem;
+}
+
+/* ========================================
+   9. KEY FINDINGS
+   ======================================== */
+
+.finding {
+    margin: 2rem 0;
+    padding: clamp(2rem, 5vw, 3rem);
+    background: #eee7f5;
+    border-bottom: 0;
+    border-left: 6px solid var(--violet-dark);
+}
+
+.finding .section-index {
+    color: var(--violet-dark);
+}
+
+/* ========================================
+   10. FOOTER
+   ======================================== */
+
+.story-footer {
+    padding: 2.5rem 0;
+    color: var(--cream);
+    background: var(--ink);
+}
+
+.story-footer .story-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.story-footer p {
+    margin: 0;
+}
+
+.story-footer a {
+    color: var(--lilac);
+}
+
+/* ========================================
+   11. RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 600px) {
+    .story-container {
+        width: min(100% - 2rem, 900px);
+    }
+
+    .story-hero {
+        padding: 1.5rem 0;
+    }
+
+    .chart-caption {
+        padding: 0.8rem 1rem;
+    }
+
+    .chart-frame .vega-bindings {
+        gap: 8px;
+    }
+
+    .chart-frame .vega-bindings select {
+        max-width: 100%;
+    }
+
+    .finding {
+        margin-inline: -0.2rem;
+    }
+}
+
+/* ========================================
+   12. ACCESSIBILITY
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
