@@ -11,7 +11,8 @@ format:
     toc: false
     page-layout: full
     title-block-banner: false
-    embed-resources: false
+    embed-resources: true
+
 
 execute:
   echo: false
